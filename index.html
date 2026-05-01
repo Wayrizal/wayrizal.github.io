@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayrizal — Brand, Marketing & Creative Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Geist:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ink:        #0c0c0b;
+  --ink-soft:   #111110;
+  --paper:      #f7f4ef;
+  --paper-warm: #ede8df;
+  --gold:       #b8963e;
+  --gold-pale:  #d4b870;
+  --muted:      #888880;
+  --muted-light:#bbb9b2;
+  --rule:       rgba(255,255,255,0.07);
+  --rule-dark:  rgba(0,0,0,0.1);
+  --font-head:  'Cormorant Garamond', Georgia, serif;
+  --font-body:  'Geist', 'Helvetica Neue', sans-serif;
+  --font-mono:  'DM Mono', monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--ink);
+  color: var(--paper);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.85;
+  display: block;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 4rem;
+  transition: background 0.4s, padding 0.4s;
+}
+nav.scrolled {
+  background: rgba(12,12,11,0.96);
+  backdrop-filter: blur(16px);
+  padding: 1rem 4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.nav-id {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--paper);
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  text-decoration: none;
+  opacity: 0.38;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover { opacity: 1; }
+
+/* OPENING */
+#opening {
+  min-height: 100vh;
+  display: grid;
+  place-items: end start;
+  padding: 0 4rem 7rem;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse 90% 60% at 65% 35%, rgba(184,150,62,0.055) 0%, transparent 55%), var(--ink);
+}
+.opening-chapter {
+  position: absolute; right: 4rem; top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.32em;
+  color: var(--muted);
+  opacity: 0.22;
+  white-space: nowrap;
+}
+.opening-content { position: relative; z-index: 1; max-width: 820px; }
+.opening-eyebrow {
+  display: flex; align-items: center; gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+.opening-eyebrow-line { width: 32px; height: 1px; background: var(--gold); opacity: 0.45; }
+
+.opening-name {
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+  white-space: nowrap;
+}
+.opening-name em { font-style: italic; color: var(--gold); }
+
+.opening-statement {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(247,244,239,0.7);
+  max-width: 580px;
+  margin-bottom: 3.5rem;
+  border-left: 1px solid rgba(184,150,62,0.3);
+  padding-left: 1.8rem;
+}
+
+.opening-meta { display: flex; gap: 3rem; flex-wrap: wrap; }
+.meta-val {
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+.opening-scroll {
+  position: absolute; bottom: 3rem; left: 4rem;
+  display: flex; align-items: center; gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.35;
+}
+.opening-scroll::before {
+  content: '';
+  width: 40px; height: 1px; background: var(--muted);
+  display: block;
+  animation: sline 2.5s ease-in-out infinite;
+}
+@keyframes sline {
+  0%,100% { width:40px; opacity:0.35; }
+  50% { width:64px; opacity:0.8; }
+}
+
+/* PHILOSOPHY */
+#philosophy { background: var(--paper); color: var(--ink); padding: 9rem 0; }
+.phil-wrap {
+  max-width: 960px; margin: 0 auto; padding: 0 4rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start;
+}
+.section-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 1.2rem 0 2.5rem;
+}
+.section-heading em { font-style: italic; color: var(--gold); }
+.body-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #4a4a44;
+  margin-bottom: 1.1rem;
+}
+.belief-list { list-style: none; }
+.belief-item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--rule-dark);
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 1.2rem;
+}
+.belief-num {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--gold);
+  opacity: 0.6;
+  padding-top: 0.15rem;
+}
+.belief-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  color: var(--ink);
+}
+.belief-body {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: #666;
+}
+
+/* JOURNEY */
+#journey { background: var(--ink-soft); padding: 9rem 0; }
+.journey-wrap { max-width: 960px; margin: 0 auto; padding: 0 4rem; }
+.journey-header {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: end; margin-bottom: 5.5rem;
+}
+.journey-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 1.2rem 0 0;
+}
+.journey-heading em { font-style: italic; color: var(--gold); }
+.journey-intro {
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--muted-light);
+  padding-top: 1rem;
+}
+.phase {
+  display: grid; grid-template-columns: 190px 1fr; gap: 4rem;
+  padding: 3.2rem 0;
+  border-top: 1px solid var(--rule);
+}
+.phase:last-child { border-bottom: 1px solid var(--rule); }
+.phase-tag { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.65; margin-bottom: 0.4rem; }
+.phase-period {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1;
+  margin-bottom: 0.7rem;
+  letter-spacing: -0.01em;
+}
+.phase-companies { font-size: 0.7rem; color: var(--muted); opacity: 0.45; line-height: 1.6; font-weight: 300; }
+.phase-title {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--paper);
+  margin-bottom: 0.7rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.phase-title em { font-style: italic; color: var(--gold); }
+.phase-narrative {
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.88;
+  color: var(--muted-light);
+  margin-bottom: 1.1rem;
+}
+.phase-pivot {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(184,150,62,0.22);
+  padding: 0.28rem 0.65rem;
+}
+
+/* CAPABILITIES */
+#capabilities { background: var(--paper); color: var(--ink); padding: 9rem 0; }
+.cap-wrap { max-width: 960px; margin: 0 auto; padding: 0 4rem; }
+.cap-header {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+  align-items: end; margin-bottom: 5rem;
+}
+.cap-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 1.2rem 0 0;
+}
+.cap-heading em { font-style: italic; color: var(--gold); }
+.cap-intro { font-size: 0.86rem; font-weight: 300; line-height: 1.85; color: #666; }
+.cap-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border-top: 1px solid var(--rule-dark);
+}
+.cap-item {
+  padding: 2.4rem 3rem 2.4rem 0;
+  border-bottom: 1px solid var(--rule-dark);
+}
+.cap-item:nth-child(odd) { border-right: 1px solid var(--rule-dark); }
+.cap-item:nth-child(even) { padding-left: 3rem; padding-right: 0; }
+.cap-num { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.18em; color: var(--gold); opacity: 0.55; margin-bottom: 0.7rem; }
+.cap-title { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.45rem; }
+.cap-body { font-size: 0.8rem; font-weight: 300; line-height: 1.75; color: #666; }
+
+/* WORK */
+#work { background: var(--ink); padding: 9rem 0; }
+.work-wrap { max-width: 960px; margin: 0 auto; padding: 0 4rem; }
+.work-header { margin-bottom: 5rem; }
+.work-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 1.2rem 0 1rem;
+}
+.work-heading em { font-style: italic; color: var(--gold); }
+.work-subtext { font-size: 0.8rem; font-weight: 300; color: var(--muted); max-width: 460px; line-height: 1.7; }
+
+.case {
+  padding: 3.8rem 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.case:last-child { border-bottom: 1px solid var(--rule); }
+.case-index {
+  font-family: var(--font-head);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: rgba(247,244,239,0.05);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.case-client { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; opacity: 0.8; }
+.case-title {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--paper);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.case-year { font-family: var(--font-mono); font-size: 0.58rem; color: var(--muted); opacity: 0.45; letter-spacing: 0.1em; }
+.case-link {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  margin-top: 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  opacity: 0.65;
+  border-bottom: 1px solid rgba(184,150,62,0.28);
+  padding-bottom: 0.28rem;
+  transition: opacity 0.2s, gap 0.2s;
+}
+.case-link:hover { opacity: 1; gap: 0.9rem; }
+.case-link::after { content: '→'; }
+
+.case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.case-block {
+  padding: 1.4rem 1.8rem 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.case-block:nth-child(even) {
+  padding-left: 1.8rem; padding-right: 0;
+  border-left: 1px solid var(--rule);
+}
+.case-block:nth-last-child(-n+2) { border-bottom: none; }
+.case-block-label {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.45;
+  margin-bottom: 0.55rem;
+}
+.case-block-body { font-size: 0.8rem; font-weight: 300; line-height: 1.75; color: var(--muted-light); }
+.case-block.impact .case-block-body { color: var(--paper); font-weight: 400; }
+.case-recognition {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* IMPACT */
+#impact { background: var(--paper-warm); color: var(--ink); padding: 9rem 0; }
+.impact-wrap { max-width: 960px; margin: 0 auto; padding: 0 4rem; }
+.impact-statement {
+  font-family: var(--font-head);
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  max-width: 660px;
+  margin: 1.2rem 0 4rem;
+}
+.impact-statement em { font-style: italic; color: var(--gold); }
+.impact-cols {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 5rem;
+}
+.impact-col-num {
+  font-family: var(--font-head);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.impact-col-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 0.45rem; }
+.impact-col-body { font-size: 0.78rem; font-weight: 300; line-height: 1.7; color: #666; }
+.award-editorial { border-top: 1px solid var(--rule-dark); padding-top: 3rem; }
+.award-editorial-text {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: #5a5a52;
+  max-width: 620px;
+  margin-bottom: 2rem;
+}
+.award-tags { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.award-tag {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid rgba(0,0,0,0.14);
+  color: #888;
+}
+
+/* CLOSING */
+#closing { background: var(--ink); padding: 10rem 0 8rem; position: relative; overflow: hidden; }
+.closing-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 55% 55% at 50% 50%, rgba(184,150,62,0.045) 0%, transparent 65%);
+}
+.closing-wrap {
+  position: relative;
+  max-width: 960px; margin: 0 auto; padding: 0 4rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start;
+}
+.closing-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 1.2rem 0 2rem;
+}
+.closing-heading em { font-style: italic; color: var(--gold); }
+.closing-body { font-size: 0.86rem; font-weight: 300; line-height: 1.9; color: var(--muted-light); margin-bottom: 2.8rem; }
+.cta-primary {
+  display: inline-flex; align-items: center; gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 0.85rem 1.7rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, gap 0.2s;
+  margin-bottom: 0.7rem;
+  display: block;
+  width: fit-content;
+}
+.cta-primary:hover { background: var(--gold-pale); }
+.cta-secondary {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.28rem;
+  transition: color 0.2s;
+  width: fit-content;
+}
+.cta-secondary:hover { color: var(--paper); }
+.cta-secondary::after { content: '→'; }
+.closing-contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.42;
+  margin-bottom: 1.8rem;
+}
+.contact-line {
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.contact-line-key { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); opacity: 0.4; }
+.contact-line-val { font-size: 0.8rem; font-weight: 300; color: var(--muted-light); }
+.contact-line-val a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.contact-line-val a:hover { color: var(--gold); }
+
+footer {
+  background: var(--ink);
+  border-top: 1px solid var(--rule);
+  padding: 2.2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-id { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); opacity: 0.25; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.72s ease, transform 0.72s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.32s; }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  nav { padding: 1.2rem 1.5rem; }
+  nav.scrolled { padding: 0.9rem 1.5rem; }
+  .nav-links { display: none; }
+  #opening { padding: 0 1.5rem 5rem; }
+  .opening-chapter { display: none; }
+  .phil-wrap, .cap-header, .journey-header, .closing-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .phil-wrap, .journey-wrap, .cap-wrap, .work-wrap, .impact-wrap, .closing-wrap { padding: 0 1.5rem; }
+  #philosophy, #journey, #capabilities, #work, #impact, #closing { padding: 5.5rem 0; }
+  .phase { grid-template-columns: 1fr; gap: 1rem; }
+  .case { grid-template-columns: 1fr; gap: 1.8rem; }
+  .case-index { display: none; }
+  .impact-cols { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .cap-grid { grid-template-columns: 1fr; }
+  .cap-item:nth-child(odd) { border-right: none; padding-right: 0; }
+  .cap-item:nth-child(even) { padding-left: 0; border-left: none; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; gap: 0.5rem; }
+}
+@media (max-width: 520px) {
+  .case-grid { grid-template-columns: 1fr; }
+  .case-block:nth-child(even) { padding-left: 0; border-left: none; }
+  .case-block:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .case-block:last-child { border-bottom: none; }
+  .impact-cols { grid-template-columns: 1fr; }
+  .opening-meta { gap: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-id">Wayrizal .</div>
+  <ul class="nav-links">
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#capabilities">What I Do</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#closing">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- 1. OPENING -->
+<section id="opening">
+  <div class="opening-chapter">Brand · Marketing · Creative Leadership · Jakarta · APAC</div>
+  <div class="opening-content">
+    <div class="opening-eyebrow reveal">
+      <div class="opening-eyebrow-line"></div>
+      <span class="label">Executive Profile</span>
+    </div>
+    <h1 class="opening-name reveal d1">Wayrizal<em>.</em></h1>
+    <p class="opening-statement reveal d2">
+      I build systems that turn creativity into business growth.<br><br>
+      After 30+ years in creative leadership, my focus is no longer just on ideas — but on making brand and marketing work as a growth engine. From integrated campaigns at global networks to leading brand transformation inside high-growth startups.
+    </p>
+    <div class="opening-meta reveal d3">
+      <div class="meta-item">
+        <div class="meta-val">30+</div>
+        <div class="meta-label">Years Experience</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val">50+</div>
+        <div class="meta-label">Major Brands</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val">APAC</div>
+        <div class="meta-label">Market Exposure</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val">4×</div>
+        <div class="meta-label">Business Impact</div>
+      </div>
+    </div>
+  </div>
+  <div class="opening-scroll">Scroll</div>
+</section>
+
+<!-- 2. PHILOSOPHY -->
+<section id="philosophy">
+  <div class="phil-wrap">
+    <div class="phil-left">
+      <span class="label reveal">What I Believe</span>
+      <h2 class="section-heading reveal d1">Creativity is a<br><em>business<br>instrument.</em></h2>
+      <p class="body-text reveal d2">I don't separate brand from business. The most effective work I've done was always anchored in a clear business objective — not just a brief.</p>
+      <p class="body-text reveal d2">My practice is built on the belief that <strong>brand clarity drives commercial performance</strong> — and that the job of a creative leader is to build systems, not just campaigns.</p>
+    </div>
+    <div class="phil-right">
+      <ul class="belief-list">
+        <li class="belief-item reveal">
+          <span class="belief-num">01</span>
+          <div>
+            <div class="belief-title">Brand is a growth system</div>
+            <div class="belief-body">A brand consistently expressed — across touchpoints, teams, and time — becomes a structural business advantage. Not a style guide. An asset.</div>
+          </div>
+        </li>
+        <li class="belief-item reveal d1">
+          <span class="belief-num">02</span>
+          <div>
+            <div class="belief-title">Insight before execution</div>
+            <div class="belief-body">The right question always precedes the right idea. Understanding behavior — not just demographics — is where real creative leverage lives.</div>
+          </div>
+        </li>
+        <li class="belief-item reveal d2">
+          <span class="belief-num">03</span>
+          <div>
+            <div class="belief-title">Simplicity is earned</div>
+            <div class="belief-body">The clearest communication is usually the hardest to arrive at. Restraint is a discipline. Complexity is easy — clarity takes rigor and honest editing.</div>
+          </div>
+        </li>
+        <li class="belief-item reveal d3">
+          <span class="belief-num">04</span>
+          <div>
+            <div class="belief-title">Execution is strategy</div>
+            <div class="belief-body">A great idea that can't be produced consistently at scale is not a great idea for business. Systems that make good execution the default — that's the real creative work.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3. JOURNEY -->
+<section id="journey">
+  <div class="journey-wrap">
+    <div class="journey-header">
+      <div>
+        <span class="label reveal">Career Journey</span>
+        <h2 class="journey-heading reveal d1">Three decades.<br><em>Five evolutions.</em></h2>
+      </div>
+      <p class="journey-intro reveal d2">A career shaped not by one role, but by a series of deliberate pivots — each expanding the scope of what a creative leader can contribute to a business.</p>
+    </div>
+
+    <div class="phase reveal">
+      <div class="phase-left">
+        <div class="phase-tag">Foundation</div>
+        <div class="phase-period">1993–2000</div>
+        <div class="phase-companies">Binamark · Brains Communication · JC&amp;K Advertising</div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-title">Craft &amp; <em>Execution</em></div>
+        <p class="phase-narrative">Began in production and print — learning the fundamentals of visual communication from the inside out. Precision, deadline discipline, and an understanding of how ideas survive the process of being made. These early years shaped a working philosophy: good work starts with knowing how things are built.</p>
+        <span class="phase-pivot">Desktop Visualizer → Art Director</span>
+      </div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="phase-left">
+        <div class="phase-tag">Early Leadership</div>
+        <div class="phase-period">2000–2008</div>
+        <div class="phase-companies">Lowe Indonesia · JWT Jakarta · Dwi Sapta Group</div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-title">Global Networks,<br><em>Major Brands</em></div>
+        <p class="phase-narrative">Moved from execution to leading — directing campaigns for multinational clients across automotive, FMCG, finance, and pharma. Learned how large brands think: consistency at scale, multi-channel coherence, and the complexity of creative alignment across organizations.</p>
+        <span class="phase-pivot">Senior Art Director → Associate Creative Director</span>
+      </div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="phase-left">
+        <div class="phase-tag">Enterprise Scale</div>
+        <div class="phase-period">2008–2017</div>
+        <div class="phase-companies">Fortune Indonesia · DDB · Leo Burnett · Publicis</div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-title">Leading at <em>Scale</em></div>
+        <p class="phase-narrative">The Leo Burnett years were defining. Leading creative direction for Telkomsel — Indonesia's largest telco — demanded more than campaign thinking. It required building platforms consistent across every channel, team, and quarter. International recognition followed. The more lasting outcome was learning to align creative leadership with business strategy — not just producing award-winning work, but building the conditions for it.</p>
+        <span class="phase-pivot">Creative Director → Deputy Executive Creative Director</span>
+      </div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="phase-left">
+        <div class="phase-tag">System Transformation</div>
+        <div class="phase-period">2018–2020</div>
+        <div class="phase-companies">dentsu X · SAC Indonesia · Trusmi Group</div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-title">Digital Pivot,<br><em>Operational Depth</em></div>
+        <p class="phase-narrative">Led digital creative strategy across data-driven media environments — bridging the gap between media, analytics, and creative output. At SAC Indonesia, rebuilt production workflows for a team of 16+, improving delivery consistency and winning new business across seven accounts. The shift was clear: the next generation of creative leader is also a systems thinker.</p>
+        <span class="phase-pivot">Digital Creative Director → Head of Creative + Production</span>
+      </div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="phase-left">
+        <div class="phase-tag">Business Impact</div>
+        <div class="phase-period">2020–2021</div>
+        <div class="phase-companies">eFishery (Unicorn)</div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-title">Brand as <em>Business Engine</em></div>
+        <p class="phase-narrative">Joining eFishery was a deliberate move toward purpose and commercial impact. Led brand and creative strategy across multiple business units. Aligned brand, product, and communication to support business objectives. Contributed to initiatives supporting 4× profit growth. Launched two farmer-facing digital platforms. Proof that brand-led thinking is not a marketing function — it is a commercial one.</p>
+        <span class="phase-pivot">Brand &amp; Digital Creative Lead</span>
+      </div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="phase-left">
+        <div class="phase-tag">Present</div>
+        <div class="phase-period">2021–Now</div>
+        <div class="phase-companies">HATMA Creative · Naminori</div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-title">Building<br><em>From the Top</em></div>
+        <p class="phase-narrative">Currently leading creative direction at HATMA Creative — developing scalable systems aligned with business and growth objectives. Simultaneously building Naminori as Co-Founder — constructing brand positioning, identity, and go-to-market strategy from scratch. Two different contexts. The same operating principle: brand and marketing as instruments of growth.</p>
+        <span class="phase-pivot">Executive Creative Director · Co-Founder</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4. CAPABILITIES -->
+<section id="capabilities">
+  <div class="cap-wrap">
+    <div class="cap-header">
+      <div>
+        <span class="label reveal">What I Do</span>
+        <h2 class="cap-heading reveal d1">Capabilities.<br><em>Framed as<br>business value.</em></h2>
+      </div>
+      <p class="cap-intro reveal d2">These are not creative services. They are business functions — each designed to produce measurable outcomes.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item reveal">
+        <div class="cap-num">01</div>
+        <div class="cap-title">Align Brand with Business Strategy</div>
+        <div class="cap-body">Translate business objectives into clear brand positioning. Ensure brand expression is not a design exercise — but a strategic framework every team can execute from.</div>
+      </div>
+      <div class="cap-item reveal d1">
+        <div class="cap-num">02</div>
+        <div class="cap-title">Build Scalable Creative Systems</div>
+        <div class="cap-body">Design workflows, guidelines, and production frameworks that allow organizations to deliver consistent, effective communication at scale — without sacrificing quality.</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-num">03</div>
+        <div class="cap-title">Improve Speed, Consistency, and Impact</div>
+        <div class="cap-body">Diagnose creative and operational bottlenecks. Rebuild team structures and review processes so output improves in quality while reducing time to market.</div>
+      </div>
+      <div class="cap-item reveal d1">
+        <div class="cap-num">04</div>
+        <div class="cap-title">Lead High-Performing Creative Teams</div>
+        <div class="cap-body">Recruit, mentor, and develop senior creative talent. Build team cultures where strategic thinking and craft are equally valued. The team is not a resource — it is the product.</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-num">05</div>
+        <div class="cap-title">Drive New Business Through Creative</div>
+        <div class="cap-body">Lead pitch development from strategic narrative to creative execution. A track record of winning competitive pitches across FMCG, telco, finance, and tech.</div>
+      </div>
+      <div class="cap-item reveal d1">
+        <div class="cap-num">06</div>
+        <div class="cap-title">Optimize Customer Journey &amp; Touchpoints</div>
+        <div class="cap-body">Map and improve the full brand experience — from awareness to conversion to retention. Design communication that works with how decisions are actually made.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SELECTED WORK -->
+<section id="work">
+  <div class="work-wrap">
+    <div class="work-header">
+      <span class="label reveal">Selected Work</span>
+      <h2 class="work-heading reveal d1">Case studies.<br><em>Not a gallery.</em></h2>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-left">
+        <div class="case-index">01</div>
+        <div class="case-client">Edufarmers × HATMA Creative</div>
+        <div class="case-title">The Missing Egg</div>
+        <div class="case-year">2024–2025</div>
+        <a href="https://www.behance.net/gallery/238948747/Turning-Awareness-Into-Behavioral-Impact-in-Social" target="_blank" class="case-link">View on Behance</a>
+      </div>
+      <div class="case-right">
+        <div class="case-grid">
+          <div class="case-block">
+            <div class="case-block-label">Context</div>
+            <div class="case-block-body">Child stunting in Indonesia. Existing campaigns raised awareness but consistently failed to shift household behavior.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Problem</div>
+            <div class="case-block-body">Translate a complex nutritional issue into communication that moves parents to act — not just acknowledge.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Approach</div>
+            <div class="case-block-body">Multi-channel social narrative built around a single emotionally resonant metaphor. Strategic simplicity over informational complexity.</div>
+          </div>
+          <div class="case-block impact">
+            <div class="case-block-label">Impact</div>
+            <div class="case-block-body">Behavioral shift documented across key target segments.
+              <span class="case-recognition">Bronze Film Craft Lotus AdFest · 2 Bronzes Citra Pariwara · Gold Bawana · 4 Silvers Pinasthika · Best of Digital Video</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-left">
+        <div class="case-index">02</div>
+        <div class="case-client">eFishery</div>
+        <div class="case-title">Building a Unicorn's Brand</div>
+        <div class="case-year">2020–2021</div>
+        <a href="https://www.behance.net/gallery/111665263/Aligning-Brand-Product-Communication-to-Drive-Growth" target="_blank" class="case-link">View on Behance</a>
+      </div>
+      <div class="case-right">
+        <div class="case-grid">
+          <div class="case-block">
+            <div class="case-block-label">Context</div>
+            <div class="case-block-body">eFishery was scaling rapidly but lacked brand coherence across its expanding product portfolio and internal teams.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Problem</div>
+            <div class="case-block-body">Misalignment between brand, product, and communication was reducing market clarity as the company approached unicorn valuation.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Approach</div>
+            <div class="case-block-body">Led brand strategy alignment across business units. Launched DPS and eLab — digital platforms improving farmer productivity and positioning eFishery as a technology leader.</div>
+          </div>
+          <div class="case-block impact">
+            <div class="case-block-label">Impact</div>
+            <div class="case-block-body">Contributed to initiatives supporting <strong>4× profit growth in 2020.</strong> Strengthened brand equity through eFishery's unicorn milestone.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-left">
+        <div class="case-index">03</div>
+        <div class="case-client">Bloodbook</div>
+        <div class="case-title">Turning Donation into Identity</div>
+        <div class="case-year">2021</div>
+        <a href="https://www.behance.net/gallery/37950771/PMI-bloodbook" target="_blank" class="case-link">View on Behance</a>
+      </div>
+      <div class="case-right">
+        <div class="case-grid">
+          <div class="case-block">
+            <div class="case-block-label">Context</div>
+            <div class="case-block-body">Blood donation awareness is high in intent, but low in consistency. People are willing to help — but lack a reason to return.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Problem</div>
+            <div class="case-block-body">How do we shift blood donation from a one-time act into a repeatable behavior that feels personal and meaningful?</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Approach</div>
+            <div class="case-block-body">Created a system that turns donation into identity. Instead of a functional donor card, Bloodbook becomes a personal record of contribution — designed to visually track donation history, create a sense of ownership and pride, and transform donation from an action into a personal journey. The shift moves communication from awareness → to behavior design.</div>
+          </div>
+          <div class="case-block impact">
+            <div class="case-block-label">Impact</div>
+            <div class="case-block-body">Encouraged repeat donation through progress-driven engagement. Reduced reliance on short-term campaign spikes. Introduced a more sustainable model: habit-building through identity.
+              <span class="case-recognition">Gold Direct Lotus AdFest 2015 · One Show Merit (Best Use of Social Network) · 2 Bronzes SpikeAsia 2015 · 2 Golds + Silver Citra Pariwara 2014 · 7+ Q4 LBGPC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-left">
+        <div class="case-index">04</div>
+        <div class="case-client">Indosat · HATMA Creative</div>
+        <div class="case-title">SheHacks</div>
+        <div class="case-year">2025</div>
+        <a href="https://www.behance.net/gallery/226555137/Indosat-SheHacks" target="_blank" class="case-link">View on Behance</a>
+      </div>
+      <div class="case-right">
+        <div class="case-grid">
+          <div class="case-block">
+            <div class="case-block-label">Context</div>
+            <div class="case-block-body">Indosat needed to demonstrate genuine commitment to women in tech — a category crowded with performative campaigns.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Problem</div>
+            <div class="case-block-body">Tell a real story about women overcoming systemic barriers — without making it feel like brand communication.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Approach</div>
+            <div class="case-block-body">Shifted from campaign thinking to documentary storytelling. Real women, real obstacles, real transformation. Minimal brand presence. Maximum credibility.</div>
+          </div>
+          <div class="case-block impact">
+            <div class="case-block-label">Impact</div>
+            <div class="case-block-body">Elevated brand perception in the women's empowerment space. Delivered genuine cultural relevance — not just reach metrics.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-left">
+        <div class="case-index">05</div>
+        <div class="case-client">Infinix · HATMA Creative</div>
+        <div class="case-title">It's Note What You Think</div>
+        <div class="case-year">2026</div>
+        <a href="https://www.behance.net/gallery/244773253/Infinix-Note60-Its-Note-What-You-Think" target="_blank" class="case-link">View on Behance</a>
+      </div>
+      <div class="case-right">
+        <div class="case-grid">
+          <div class="case-block">
+            <div class="case-block-label">Context</div>
+            <div class="case-block-body">Infinix Note60 competing in a saturated mid-range smartphone category dominated by spec-focused communication.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Problem</div>
+            <div class="case-block-body">Make a smartphone feel distinctive to a youth audience that has been marketed at — not talked to — for years.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Approach</div>
+            <div class="case-block-body">Campaign built around subverted expectations. The product as proof, not prop. Digital and social execution designed for shareability over impressions.</div>
+          </div>
+          <div class="case-block impact">
+            <div class="case-block-label">Impact</div>
+            <div class="case-block-body">Drove engagement and brand affinity within the target demographic. Structured to support both awareness and conversion objectives.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-left">
+        <div class="case-index">06</div>
+        <div class="case-client">SAC Indonesia</div>
+        <div class="case-title">BCA Social — Re-Pitch Win</div>
+        <div class="case-year">2018–2020</div>
+      </div>
+      <div class="case-right">
+        <div class="case-grid">
+          <div class="case-block">
+            <div class="case-block-label">Context</div>
+            <div class="case-block-body">BCA — one of Indonesia's most prominent banking brands — reviewing its social media agency. A competitive re-pitch.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Problem</div>
+            <div class="case-block-body">Win the account by demonstrating a fundamentally different approach — treating social content as a customer experience tool, not a publishing schedule.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label">Approach</div>
+            <div class="case-block-body">Reframed the pitch around customer journey thinking. Showed how social touchpoints could reduce friction, build trust, and support conversion.</div>
+          </div>
+          <div class="case-block impact">
+            <div class="case-block-label">Impact</div>
+            <div class="case-block-body">Won the re-pitch. Retained the account throughout the engagement. Delivered strategy aligned with BCA's service and trust positioning.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid var(--rule);" class="reveal">
+      <a href="https://www.behance.net/wayrizal" target="_blank"
+        style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted-light);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.28rem;transition:color 0.2s;"
+        onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted-light)'">
+        Full portfolio on Behance →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. IMPACT -->
+<section id="impact">
+  <div class="impact-wrap">
+    <span class="label reveal">Impact &amp; Recognition</span>
+    <p class="impact-statement reveal d1">
+      Thirty years measured not by awards collected, but by <em>business outcomes delivered</em> — and by the organizations that were stronger after the engagement.
+    </p>
+    <div class="impact-cols">
+      <div class="impact-col reveal">
+        <div class="impact-col-num">4×</div>
+        <div class="impact-col-label">Profit Growth</div>
+        <div class="impact-col-body">Contributed to eFishery's 4× profit growth in 2020 through brand-marketing-product alignment during a critical scaling phase.</div>
+      </div>
+      <div class="impact-col reveal d1">
+        <div class="impact-col-num">50+</div>
+        <div class="impact-col-label">Brands</div>
+        <div class="impact-col-body">Across FMCG, telco, finance, automotive, tech, and public sector — Indonesia and across APAC markets.</div>
+      </div>
+      <div class="impact-col reveal d2">
+        <div class="impact-col-num">10+</div>
+        <div class="impact-col-label">New Business Wins</div>
+        <div class="impact-col-body">Pitches won across Nokia, Go-Pay, BCA, Suzuki, Bank Muamalat, Indofood, and others through creative-led business development.</div>
+      </div>
+    </div>
+    <div class="award-editorial reveal">
+      <p class="award-editorial-text">"Contributed to award-winning campaigns across multiple industries — while consistently prioritizing business impact over recognition. The awards were a byproduct of doing the work right."</p>
+      <div class="award-tags">
+        <span class="award-tag">AdFest Gold ×3</span>
+        <span class="award-tag">Citra Pariwara Gold ×10+</span>
+        <span class="award-tag">SpikeAsia Silver</span>
+        <span class="award-tag">One Show Merit</span>
+        <span class="award-tag">Pinasthika Gold</span>
+        <span class="award-tag">Mobius 1st Place</span>
+        <span class="award-tag">Film Craft Lotus</span>
+        <span class="award-tag">Bawana Gold</span>
+        <span class="award-tag">SCTV Best Ad</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CLOSING -->
+<section id="closing">
+  <div class="closing-bg"></div>
+  <div class="closing-wrap">
+    <div class="closing-left">
+      <span class="label reveal">What's Next</span>
+      <h2 class="closing-heading reveal d1">Where brand,<br>marketing &amp;<br><em>growth intersect.</em></h2>
+      <p class="closing-body reveal d2">I'm interested in roles where the remit goes beyond creative output — where brand strategy is genuinely connected to business performance, and where building the right systems matters as much as building the right campaigns.<br><br>Not just building ideas. Building the structures that make them work.</p>
+      <div class="reveal d3" style="display:flex;flex-direction:column;gap:0.7rem;">
+        <a href="https://www.linkedin.com/in/wrizal/" target="_blank" class="cta-primary">Connect on LinkedIn</a>
+        <a href="https://www.behance.net/wayrizal" target="_blank" class="cta-secondary">View Full Portfolio</a>
+      </div>
+    </div>
+    <div class="closing-right reveal d2">
+      <div class="closing-contact-label">Contact</div>
+      <div class="contact-line">
+        <span class="contact-line-key">Email</span>
+        <span class="contact-line-val"><a href="mailto:wrizal@gmail.com">wrizal@gmail.com</a></span>
+      </div>
+      <div class="contact-line">
+        <span class="contact-line-key">Phone</span>
+        <span class="contact-line-val"><a href="tel:+628111010532">+62 811 101 0532</a></span>
+      </div>
+      <div class="contact-line">
+        <span class="contact-line-key">LinkedIn</span>
+        <span class="contact-line-val"><a href="https://www.linkedin.com/in/wrizal/" target="_blank">linkedin.com/in/wrizal</a></span>
+      </div>
+      <div class="contact-line">
+        <span class="contact-line-key">Portfolio</span>
+        <span class="contact-line-val"><a href="https://www.behance.net/wayrizal" target="_blank">behance.net/wayrizal</a></span>
+      </div>
+      <div class="contact-line">
+        <span class="contact-line-key">Location</span>
+        <span class="contact-line-val">Jakarta Metropolitan Area</span>
+      </div>
+      <div class="contact-line">
+        <span class="contact-line-key">Availability</span>
+        <span class="contact-line-val">Open to full-time &amp; freelance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-id">Wayrizal · Brand, Marketing &amp; Creative Leader · Jakarta · 1993–Present</span>
+  <span class="footer-id">Executive Profile</span>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  setTimeout(() => {
+    document.querySelectorAll('#opening .reveal').forEach(el => el.classList.add('in'));
+  }, 120);
+</script>
+</body>
+</html>
