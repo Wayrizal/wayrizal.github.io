@@ -248,17 +248,21 @@ section { padding: 7rem 4rem; }
 }
 .work-heading em { font-style: italic; color: var(--gold); }
 
+/* CASE LAYOUT */
 .case {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 4rem;
-  padding: 3.2rem 0;
+  padding: 3rem 0;
   border-top: 1px solid var(--rule);
   align-items: start;
 }
 .case:last-of-type { border-bottom: 1px solid var(--rule); }
 
-.case-meta {}
+.case-meta { min-width: 0; }
+.case-body { min-width: 0; }
+
+/* LEFT SIDE */
 .case-num {
   font-family: var(--fh);
   font-size: 3rem;
@@ -267,6 +271,7 @@ section { padding: 7rem 4rem; }
   line-height: 1;
   margin-bottom: 0.8rem;
 }
+
 .case-client {
   font-family: var(--fm);
   font-size: 0.58rem;
@@ -276,6 +281,7 @@ section { padding: 7rem 4rem; }
   opacity: 0.8;
   margin-bottom: 0.3rem;
 }
+
 .case-title {
   font-family: var(--fh);
   font-size: 1.25rem;
@@ -284,6 +290,7 @@ section { padding: 7rem 4rem; }
   color: var(--paper);
   margin-bottom: 0.4rem;
 }
+
 .case-role {
   font-family: var(--fm);
   font-size: 0.56rem;
@@ -292,6 +299,7 @@ section { padding: 7rem 4rem; }
   margin-bottom: 1.2rem;
   line-height: 1.6;
 }
+
 .case-link {
   font-family: var(--fm);
   font-size: 0.56rem;
@@ -301,31 +309,36 @@ section { padding: 7rem 4rem; }
   opacity: 0.65;
   border-bottom: 1px solid rgba(181,145,58,0.25);
   padding-bottom: 0.2rem;
-  transition: opacity 0.18s;
   display: inline-block;
   margin-top: 0.4rem;
+  transition: opacity 0.18s;
 }
 .case-link:hover { opacity: 1; }
 .case-link::after { content: ' →'; }
 
-.case-body {}
+/* RIGHT SIDE GRID */
 .case-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
   border-top: 1px solid var(--rule);
 }
-.case-row:last-child {}
+
 .case-cell {
   padding: 1.2rem 1.6rem 1.2rem 0;
   border-bottom: 1px solid var(--rule);
 }
+
 .case-cell:nth-child(even) {
   padding-left: 1.6rem;
   padding-right: 0;
   border-left: 1px solid var(--rule);
 }
-.case-cell:nth-last-child(-n+2) { border-bottom: none; }
+
+.case-cell:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+/* TEXT */
 .cell-label {
   font-family: var(--fm);
   font-size: 0.54rem;
@@ -335,13 +348,19 @@ section { padding: 7rem 4rem; }
   opacity: 0.5;
   margin-bottom: 0.5rem;
 }
+
 .cell-body {
   font-size: 0.8rem;
   font-weight: 300;
-  line-height: 1.72;
+  line-height: 1.7;
   color: var(--light);
 }
-.cell-body.highlight { color: var(--paper); font-weight: 400; }
+
+.cell-body.highlight {
+  color: var(--paper);
+  font-weight: 400;
+}
+
 .case-award {
   display: block;
   margin-top: 0.5rem;
@@ -352,11 +371,13 @@ section { padding: 7rem 4rem; }
   opacity: 0.7;
 }
 
+/* ALL LINK */
 .work-all {
   margin-top: 2.5rem;
   padding-top: 2.5rem;
   border-top: 1px solid var(--rule);
 }
+
 .work-all a {
   font-family: var(--fm);
   font-size: 0.6rem;
@@ -510,7 +531,7 @@ section { padding: 7rem 4rem; }
   padding: 1.3rem 0;
   border-bottom: 1px solid var(--rule);
   display: grid;
-  grid-template-columns: 22px 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   align-items: start;
 }
@@ -864,8 +885,7 @@ footer {
       that drive <em>real business<br>growth.</em>
     </h1>
     <p class="hero-sub r d2">
-      Connecting creativity, strategy, and execution<br>
-	from idea to scale.
+      Connecting creativity, strategy, and execution from idea to scale.
     </p>
     <div class="hero-cta r d3">
       <a href="#work" class="btn-primary">View Work</a>
@@ -885,9 +905,9 @@ footer {
           Brand, marketing, and business - <em>built as one system.</em>
         </h2>
         <div class="profile-body r d2">
-          <p>I operate at the intersection of brand, marketing, and business growth. Not campaigns in isolation, but systems that scale across brand, product, and communication.</p>
+          <p>I operate at the intersection of brand, marketing, and business growth. NNot campaigns in isolation, but systems that scale across brand, product, and communication.</p>
           <p>Today: leading creative direction at <strong>HATMA Creative</strong> and building <strong>Naminori</strong> from the ground up, from brand to go-to-market to growth.</p>
-          <p>Background across global networks including <strong>Leo Burnett, JWT, DDB, LOWE and dentsuX</strong> - and high-growth startups like <strong>eFishery</strong>, where brand-marketing alignment contributed to 4× profit growth.</p>
+          <p>Background across global networks including <strong>Leo Burnett, JWT, DDB, Lowe and dentsuX</strong> - and high-growth startups like <strong>eFishery</strong>, where brand-marketing alignment contributed to 4× profit growth.</p>
         </div>
       </div>
       <div class="r d2">
@@ -1109,49 +1129,6 @@ footer {
   </div>
 </section>
 
-<!-- 4. PHILOSOPHY -->
-<section id="philosophy">
-  <div class="inner">
-    <div class="phil-grid">
-      <div>
-        <span class="eyebrow r">What I Believe</span>
-        <h2 class="phil-heading r d1">Creativity is a<br><em>business instrument.</em></h2>
-        <p class="phil-intro r d2">The most effective work is anchored in a clear business objective, not just a brief. Brand clarity drives commercial performance. The job of a creative leader is to build systems, not just campaigns.</p>
-      </div>
-      <ul class="beliefs">
-        <li class="belief r">
-          <span class="b-num">01</span>
-          <div>
-            <div class="b-title">Brand is a growth system</div>
-            <div class="b-body">Consistency turns brand into a structural business advantage.</div>
-          </div>
-        </li>
-        <li class="belief r d1">
-          <span class="b-num">02</span>
-          <div>
-            <div class="b-title">Insight before execution</div>
-            <div class="b-body">Behavior, not demographics, is where real creative leverage lives.</div>
-          </div>
-        </li>
-        <li class="belief r d2">
-          <span class="b-num">03</span>
-          <div>
-            <div class="b-title">Simplicity is earned</div>
-            <div class="b-body">Complexity is easy. Clarity takes rigor. Restraint is a discipline.</div>
-          </div>
-        </li>
-        <li class="belief r d3">
-          <span class="b-num">04</span>
-          <div>
-            <div class="b-title">Execution is strategy</div>
-            <div class="b-body">If it doesn't scale, it doesn't work for business.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- 5. WHAT I DO -->
 <section id="capabilities">
   <div class="inner">
@@ -1160,7 +1137,7 @@ footer {
         <span class="eyebrow r">What I Do</span>
         <h2 class="cap-heading r d1">Business functions.<br><em>Not creative services.</em></h2>
       </div>
-      <p class="cap-intro r d2">Each capability is designed to drive measurable business outcomes, not just deliverables.</p>
+      <p class="cap-intro r d2">Each capability is built to drive measurable business outcomes, not just deliverables.</p>
     </div>
     <div class="cap-list">
       <div class="cap-item r">
@@ -1204,32 +1181,28 @@ footer {
       <div>
         <span class="eyebrow r">How I Work Today</span>
         <h2 class="how-heading r d1">Fast. Platform-first.<br><em>Close to execution.</em></h2>
-        <p class="how-intro r d2">The way I work has evolved alongside the platforms, the pace, and the expectations of modern businesses. Today, strategy and execution are not separate phases, they happen in parallel.</p>
+        <p class="how-intro r d2">The way I work has evolved alongside the platforms, the pace, and the expectations of modern businesses. Today, strategy and execution are not separate phases, they happen at the same time.</p>
       </div>
       <ul class="how-list">
         <li class="how-item r">
-	<div style="width:0;"></div>
           <div>
             <div class="how-t">Fast Iteration</div>
             <div class="how-b">Short cycles. Faster learning. Better outcomes.</div>
           </div>
         </li>
         <li class="how-item r d1">
-	<div style="width:0;"></div>
           <div>
             <div class="how-t">Platform-First Thinking</div>
             <div class="how-b">Ideas are built for where they live, not adapted later.</div>
           </div>
         </li>
         <li class="how-item r d2">
-	<div style="width:0;"></div>
           <div>
             <div class="how-t">Close to Execution</div>
-            <div class="how-b">Strategy stays close to execution.</div>
+            <div class="how-b">Strategy stays embedded in execution.</div>
           </div>
         </li>
         <li class="how-item r d3">
-	<div style="width:0;"></div>
           <div>
             <div class="how-t">Measurable Impact</div>
             <div class="how-b">Every effort tied to a defined business outcome.</div>
@@ -1317,11 +1290,11 @@ footer {
     <span class="eyebrow r">Contact</span>
 
 	<p class="contact-statement r d1">
-  	If you're building something that needs clarity, direction, and real business impact - let's talk.
+	Building something that needs clarity, direction, and real business impact? Let's talk.
 	</p>
 
 	<p class="contact-sub r d2">
-  	I work with teams who treat creativity as a growth system, not decoration.
+  	I work with teams that treat creativity as a growth system, not decoration.
 	</p>
 
 	<div class="contact-actions r d3">
@@ -1343,7 +1316,7 @@ footer {
 	</a>
 	</div>
 	<p class="contact-sub r d2">
-	Jakarta · Available for selected projects worldwide
+	Based in Jakarta · Available globally
 	</p>
 	</div>
   </div>
