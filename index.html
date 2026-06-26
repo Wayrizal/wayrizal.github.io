@@ -97,20 +97,72 @@ section { padding: 7rem 4rem; }
   display: block;
   margin-bottom: 1.4rem;
 }
+/* ===== HERO SIGNATURE ===== */
 
-/* ── 1. HERO ────────────────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding: 0 4rem;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 80% 50% at 70% 40%, rgba(181,145,58,0.055) 0%, transparent 60%),
-    var(--ink);
+.hero-status{
+
+    position:absolute;
+    right:90px;
+    bottom:80px;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+    text-align:left;
 }
 
-.hero-inner { max-width: 860px; padding-top: 5rem; }
+.hero-status .city{
+
+    font-family:var(--fm);
+    font-size:.82rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+
+    color:var(--gold);
+}
+
+.hero-status .clock{
+
+    font-family:var(--fm);
+    font-size:.72rem;
+    letter-spacing:.18em;
+    color:rgba(248,245,240,.65);
+}
+
+@media (max-width:880px){
+
+.hero-status{
+    right:24px;
+    top:auto;
+    bottom:60px;
+    transform:none;
+}
+
+}
+
+/* ── 1. HERO ────────────────────────────────────────────── */
+#hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 4rem;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(
+            ellipse 80% 50% at 70% 40%,
+            rgba(181,145,58,.055) 0%,
+            transparent 60%
+        ),
+        var(--ink);
+}
+
+.hero-inner{
+    max-width:860px;
+    padding-top:5rem;
+}
 
 .hero-h1 {
   font-family: var(--fh);
@@ -878,6 +930,11 @@ footer {
 
 <!-- 1. HERO -->
 <section id="hero">
+<div class="hero-status">
+    <span class="city">JAKARTA</span>
+    <span class="clock" id="jakartaClock"></span>
+</div>
+
   <div class="hero-inner">
     <span class="eyebrow r">Brand · Marketing · Creative Leadership</span>
     <h1 class="hero-h1 r d1">
@@ -1361,6 +1418,24 @@ document.querySelectorAll(".r").forEach(el => obs.observe(el));
   setTimeout(() => {
     document.querySelectorAll('#hero .r').forEach(el => el.classList.add('in'));
   }, 100);
+function updateJakartaClock(){
+
+    const time = new Date().toLocaleTimeString("en-GB",{
+        timeZone:"Asia/Jakarta",
+        hour:"2-digit",
+        minute:"2-digit",
+        hour12:false
+    });
+
+    const el=document.getElementById("jakartaClock");
+
+    if(el){
+        el.textContent=`${time} GMT+7`;
+    }
+}
+
+updateJakartaClock();
+setInterval(updateJakartaClock,1000);
 </script>
 </body>
 </html>
